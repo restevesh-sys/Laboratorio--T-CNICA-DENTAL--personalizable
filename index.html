@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="es-ES" class="transparentSkybridgeBackground desktopSkybridge dark" data-theme="dark" style="color-scheme: dark; --safe-area-inset-top: 0px; --safe-area-inset-bottom: 0px; --safe-area-inset-left: 0px; --safe-area-inset-right: 0px;"><head><style>@layer sandbox-defaults{html,body,#root{margin:0;padding:0}}</style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Colección de tarjetas editables para un laboratorio de técnica dental.">
+<title>Técnica Dental | Tarjetas editables</title>
+<style>
+:root{--navy:#082b45;--navy2:#0d3b58;--teal:#087d7b;--mint:#43d5c0;--cream:#fbf7f0;--ink:#122b3e;--muted:#607582;--line:#dce7e5;--paper:#fff;--shadow:0 14px 35px #0b2d4018;--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f0f5f4;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.toolbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px clamp(16px,4vw,54px);background:#ffffffed;backdrop-filter:blur(14px);border-bottom:1px solid #dce8e7}.brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:.04em}.brandmark{width:37px;height:37px;border-radius:12px;background:linear-gradient(140deg,var(--teal),var(--navy));display:grid;place-items:center;color:white;font-size:20px}.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid #d5e1df;background:#fff;color:var(--navy);padding:10px 14px;border-radius:11px;font-weight:750;font-size:13px;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-1px);box-shadow:0 5px 14px #082b4518}.btn.primary{background:var(--navy);color:white;border-color:var(--navy)}.btn.active{background:#e0f5f1;border-color:#79cfc1;color:#056b67}.intro{max-width:1300px;margin:0 auto;padding:54px 28px 30px;display:flex;justify-content:space-between;align-items:end;gap:28px}.eyebrow{color:var(--teal);font-size:11px;font-weight:850;letter-spacing:.18em;text-transform:uppercase}.intro h1{font-size:clamp(32px,5vw,58px);letter-spacing:-.055em;line-height:.98;margin:12px 0 13px;color:var(--navy)}.intro p{max-width:600px;margin:0;color:var(--muted);font-size:15px;line-height:1.65}.intro-note{font-size:12px;color:#658078;background:#e4f3ef;padding:12px 16px;border-radius:13px;max-width:235px;line-height:1.5}.grid{max-width:1300px;margin:0 auto;padding:12px 28px 65px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}.card{position:relative;min-width:0;overflow:hidden;background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #e4ecea;display:flex;flex-direction:column;min-height:440px;transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-5px);box-shadow:0 20px 42px #0b2d4025}.card-head{position:relative;overflow:hidden;min-height:154px;padding:20px 19px 22px;background:linear-gradient(135deg,var(--navy),#0b4560);color:white}.card:nth-child(4n+2) .card-head,.card:nth-child(4n+4) .card-head{background:linear-gradient(135deg,#087b79,#075d69)}.card-head:after{content:"";position:absolute;width:190px;height:100px;right:-55px;bottom:-64px;background:var(--mint);border-radius:50% 0 0 0;transform:rotate(-10deg);opacity:.95}.card-head:before{content:"";position:absolute;width:155px;height:85px;right:-25px;bottom:-68px;background:#ffffff25;border-radius:50% 0 0 0;z-index:1}.card-brand{position:relative;z-index:2;display:flex;align-items:center;gap:9px;font-size:10px;font-weight:850;letter-spacing:.13em;text-transform:uppercase;opacity:.95}.tooth-mark{width:27px;height:30px;flex:none}.card h2{position:relative;z-index:2;font-size:clamp(17px,1.45vw,21px);line-height:1.12;letter-spacing:-.035em;margin:20px 0 0;font-weight:850}.number{color:#8ce8d8;margin-right:5px}.card-body{padding:18px 18px 0;display:flex;flex-direction:column;flex:1;background:linear-gradient(180deg,#fff 0%,var(--cream) 100%)}.card-body p{font-size:13px;line-height:1.5;margin:0;color:#233c4b;min-height:58px}.visual{height:145px;display:grid;place-items:center;margin:8px -5px 0;overflow:hidden}.visual svg{width:100%;height:100%;max-width:230px;filter:drop-shadow(0 9px 8px #203b4218)}.card-foot{margin-top:auto;background:var(--navy);color:#fff;text-align:center;padding:12px 12px 13px;position:relative}.card:nth-child(4n+2) .card-foot,.card:nth-child(4n+4) .card-foot{background:#08706f}.card-foot:before{content:"";position:absolute;top:-7px;left:35%;width:30%;height:2px;background:var(--mint);border-radius:3px}.labname{font-size:12px;font-weight:800;letter-spacing:.015em}.tagline{font-size:10px;font-style:italic;opacity:.85;margin-top:2px}.editable[contenteditable="true"]{outline:2px dashed #20a99b;outline-offset:3px;border-radius:3px;cursor:text}.edit-hint{display:none;max-width:1244px;margin:0 auto 14px;padding:0 28px;color:#08736f;font-size:12px}.editing .edit-hint{display:block}.editing .card{outline:1px dashed #80cfc4;outline-offset:2px}.editing .card:hover{transform:none}.footer{padding:22px;text-align:center;color:#71838b;font-size:12px;border-top:1px solid #dce7e5}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--navy);color:#fff;padding:11px 17px;border-radius:12px;font-size:13px;box-shadow:var(--shadow);transition:.25s;z-index:40}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1150px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.card{min-height:420px}.card h2{font-size:20px}}
+@media(max-width:760px){.toolbar{align-items:flex-start;flex-direction:column}.actions{width:100%}.btn{flex:1}.intro{padding:36px 18px 22px;display:block}.intro-note{margin-top:18px;max-width:none}.grid{padding:10px 18px 45px;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.card{min-height:390px;border-radius:18px}.card-head{padding:16px;min-height:142px}.card h2{font-size:18px;margin-top:17px}.card-body{padding:15px 14px 0}.card-body p{font-size:12px;min-height:70px}.visual{height:125px}.card-foot{padding:11px 8px}}
+@media(max-width:430px){.grid{grid-template-columns:1fr}.card{min-height:420px}.card-head{min-height:150px}.card h2{font-size:22px}.card-body p{font-size:14px;min-height:auto}.visual{height:170px}.brand{font-size:13px}}
+@media print{body{background:#fff}.toolbar,.intro-note,.edit-hint,.footer{display:none!important}.intro{padding:15px 0 22px}.grid{padding:0;max-width:none;grid-template-columns:repeat(2,1fr);gap:10px}.card{min-height:360px;break-inside:avoid;box-shadow:none;border:1px solid #ddd}.card:hover{transform:none}.card-head{min-height:125px}.visual{height:110px}.card-body p{min-height:45px}}
+</style>
+<style>html, body, #root {
+      margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0;
+      
+    }
+html,body,#root{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}html,body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Helvetica Neue,Arial,sans-serif!important}button,input,textarea,select{font-family:inherit}html{background-color:transparent}html.chatgptOled.dark,html.mobileSkybridge.dark{background-color:#000}@supports (font: -apple-system-body){html.mobileSkybridge{font:-apple-system-body}}html.desktopSkybridge.dark{background-color:#1e1e1e}html.transparentSkybridgeBackground,html.transparentSkybridgeBackground.dark{background-color:transparent}html.androidSkybridge,html.androidSkybridge body,html.androidSkybridge *{-webkit-tap-highlight-color:rgba(255,255,255,0)}html.androidSkybridge *::selection,html.androidSkybridge *::-moz-selection{background:#fff0;color:inherit}</style></head>
+<body>
+<header class="toolbar">
+ <div class="brand"><span class="brandmark">✦</span><span class="editable" data-key="brand" spellcheck="false">TÉCNICA DENTAL</span></div>
+ <nav class="actions" aria-label="Herramientas de edición">
+  <button class="btn" id="editBtn" type="button">✎ Editar contenido</button>
+  <button class="btn" id="resetBtn" type="button">Restablecer</button>
+  <button class="btn" id="printBtn" type="button">Imprimir / PDF</button>
+  <button class="btn primary" id="downloadBtn" type="button">Descargar HTML</button>
+ </nav>
+</header>
+<section class="intro">
+ <div><div class="eyebrow editable" data-key="eyebrow" spellcheck="false">Laboratorio · Tecnología · Precisión</div><h1 class="editable" data-key="headline" spellcheck="false">El arte de crear<br>sonrisas.</h1><p class="editable" data-key="intro" spellcheck="false">Conoce nuestro proceso de trabajo: precisión técnica, materiales de calidad y atención a cada detalle para lograr restauraciones funcionales y estéticas.</p></div>
+ <div class="intro-note">Activa <b>Editar contenido</b> para personalizar títulos, textos y nombre del laboratorio. Los cambios se guardan en este navegador.</div>
+</section>
+<div class="edit-hint">Modo edición activo: haz clic directamente sobre los textos para modificarlos. Al terminar, pulsa «Editar contenido» otra vez.</div>
+<main class="grid" id="cards">
+<article class="card"><header class="card-head"><div class="card-brand"><svg class="tooth-mark" viewBox="0 0 40 44" aria-hidden="true"><path d="M8 5C2 9 4 21 9 29c3 5 4 12 8 11 4-1 3-13 7-13s3 13 7 13c4 0 5-9 8-16 4-11-2-21-10-20-4 0-6 3-9 3S13 2 8 5Z" fill="none" stroke="#8ce8d8" stroke-width="4" stroke-linecap="round"></path><path d="M10 9c4-3 7 2 10 2s6-5 10-3" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"></path></svg><span class="editable" data-key="c1brand" spellcheck="false">TÉCNICA DENTAL</span></div><h2><span class="number">01.</span><span class="editable" data-key="c1title" spellcheck="false">Diseño de la prótesis</span></h2></header><div class="card-body"><p class="editable" data-key="c1desc" spellcheck="false">Planificamos forma, función y estética de cada restauración según las necesidades del paciente.</p><div class="visual"><svg viewBox="0 0 240 150"><path d="M22 111Q50 69 88 82t66-3q37-17 64 17l-6 24H28Z" fill="#d8b28b"></path><path d="M29 99q17-33 34-9l4 26q-17 13-28-2Zm40-17q20-23 33 0l2 31q-18 13-31-2Zm42-3q20-20 33 2l-1 31q-19 11-32-4Zm42-3q20-16 33 5l-4 29q-20 8-31-8Z" fill="#fff1d9" stroke="#d7b991" stroke-width="2"></path><path d="M20 119q95 16 200-2" fill="none" stroke="#b98760" stroke-width="4" stroke-linecap="round"></path><path d="M50 45h140M64 34v22m112-22v22" stroke="#39b9ad" stroke-width="2" stroke-linecap="round"></path><circle cx="120" cy="45" r="7" fill="#39b9ad"></circle></svg></div></div><footer class="card-foot"><div class="labname editable" data-key="c1foot" spellcheck="false">Laboratorio Dental</div><div class="tagline editable" data-key="c1tag" spellcheck="false">Precisión que sonríe</div></footer></article>
+<article class="card"><header class="card-head"><div class="card-brand"><svg class="tooth-mark" viewBox="0 0 40 44"><path d="M8 5C2 9 4 21 9 29c3 5 4 12 8 11 4-1 3-13 7-13s3 13 7 13c4 0 5-9 8-16 4-11-2-21-10-20-4 0-6 3-9 3S13 2 8 5Z" fill="none" stroke="#8ce8d8" stroke-width="4" stroke-linecap="round"></path><path d="M10 9c4-3 7 2 10 2s6-5 10-3" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"></path></svg><span class="editable" data-key="c2brand" spellcheck="false">TÉCNICA DENTAL</span></div><h2><span class="number">02.</span><span class="editable" data-key="c2title" spellcheck="false">Preparación del modelo</span></h2></header><div class="card-body"><p class="editable" data-key="c2desc" spellcheck="false">Limpiamos, delimitamos y revisamos el modelo para conseguir un ajuste preciso.</p><div class="visual"><svg viewBox="0 0 240 150"><path d="M23 112Q38 73 75 77l87-6q39 0 54 38l-8 19H34Z" fill="#d7b18a"></path><path d="M43 97q8-26 25-19l10 30-28 5Zm35-15q17-22 31-3l5 29-31 3Zm40-4q17-18 31 1l1 28-30 4Zm40 1q18-14 30 7l-2 24-30-4Z" fill="#fff0d7" stroke="#cba982" stroke-width="2"></path><path d="M162 21l25 12-36 53-15-8Z" fill="#a8b5ba" stroke="#506a75" stroke-width="2"></path><path d="M136 77l15 9-10 12-14-9Z" fill="#dce5e4"></path><path d="M35 120q80 12 174-1" stroke="#b78a64" stroke-width="4" fill="none"></path></svg></div></div><footer class="card-foot"><div class="labname editable" data-key="c2foot" spellcheck="false">Laboratorio Dental</div><div class="tagline editable" data-key="c2tag" spellcheck="false">Precisión que sonríe</div></footer></article>
+<article class="card"><header class="card-head"><div class="card-brand"><svg class="tooth-mark" viewBox="0 0 40 44"><path d="M8 5C2 9 4 21 9 29c3 5 4 12 8 11 4-1 3-13 7-13s3 13 7 13c4 0 5-9 8-16 4-11-2-21-10-20-4 0-6 3-9 3S13 2 8 5Z" fill="none" stroke="#8ce8d8" stroke-width="4" stroke-linecap="round"></path><path d="M10 9c4-3 7 2 10 2s6-5 10-3" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"></path></svg><span class="editable" data-key="c3brand" spellcheck="false">TÉCNICA DENTAL</span></div><h2><span class="number">03.</span><span class="editable" data-key="c3title" spellcheck="false">Impresión dental</span></h2></header><div class="card-body"><p class="editable" data-key="c3desc" spellcheck="false">Obtenemos un registro fiel de la anatomía mediante el material de impresión indicado.</p><div class="visual"><svg viewBox="0 0 240 150"><path d="M31 76q0-45 89-45t89 45q0 43-89 43T31 76Z" fill="#238fc1" stroke="#17678f" stroke-width="5"></path><path d="M53 76q0-25 67-25t67 25q0 25-67 25T53 76Z" fill="#e6f5f5" stroke="#b4dfe3" stroke-width="3"></path><path d="M64 73q8-17 17-5l4 16q-10 9-18-1Zm23-12q10-15 18-2l2 23q-11 7-19-3Zm27-3q10-12 19 1l1 22q-12 8-20-3Zm28 3q10-13 18 3l-2 19q-11 7-18-5Z" fill="#fff0d9" stroke="#cdb18f" stroke-width="2"></path><path d="M45 113q75 29 151 0" fill="none" stroke="#42d4c0" stroke-width="5" stroke-linecap="round"></path></svg></div></div><footer class="card-foot"><div class="labname editable" data-key="c3foot" spellcheck="false">Laboratorio Dental</div><div class="tagline editable" data-key="c3tag" spellcheck="false">Precisión que sonríe</div></footer></article>
+<article class="card"><header class="card-head"><div class="card-brand"><svg class="tooth-mark" viewBox="0 0 40 44"><path d="M8 5C2 9 4 21 9 29c3 5 4 12 8 11 4-1 3-13 7-13s3 13 7 13c4 0 5-9 8-16 4-11-2-21-10-20-4 0-6 3-9 3S13 2 8 5Z" fill="none" stroke="#8ce8d8" stroke-width="4" stroke-linecap="round"></path><path d="M10 9c4-3 7 2 10 2s6-5 10-3" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"></path></svg><span class="editable" data-key="c4brand" spellcheck="false">TÉCNICA DENTAL</span></div><h2><span class="number">04.</span><span class="editable" data-key="c4title" spellcheck="false">Vaciado del modelo</span></h2></header><div class="card-body"><p class="editable" data-key="c4desc" spellcheck="false">Vaciamos con yeso dental y respetamos los tiempos para obtener un modelo estable.</p><div class="visual"><svg viewBox="0 0 240 150"><path d="M30 69q0-19 20-19h140q20 0 20 19v43q0 15-18 15H48q-18 0-18-15Z" fill="#268bb5" stroke="#176887" stroke-width="4"></path><path d="M45 72q0-9 13-9h124q13 0 13 9v34q0 8-13 8H58q-13 0-13-8Z" fill="#e5c8a6"></path><path d="M54 88q14-20 27-4l5 22H55Zm34-7q15-20 29-1l2 26H88Zm39-1q15-17 29 1l1 25h-30Zm37 4q13-15 24 4l-1 17h-24Z" fill="#fff0da" stroke="#d4b38c" stroke-width="2"></path><path d="M158 12q-9 19 7 36l-10 12 18 4 10-17q-17-10-14-35Z" fill="#e3c49f"></path><path d="M168 53l-4 18" stroke="#c29a70" stroke-width="5" stroke-linecap="round"></path></svg></div></div><footer class="card-foot"><div class="labname editable" data-key="c4foot" spellcheck="false">Laboratorio Dental</div><div class="tagline editable" data-key="c4tag" spellcheck="false">Precisión que sonríe</div></footer></article>
+<article class="card"><header class="card-head"><div class="card-brand"><svg class="tooth-mark" viewBox="0 0 40 44"><path d="M8 5C2 9 4 21 9 29c3 5 4 12 8 11 4-1 3-13 7-13s3 13 7 13c4 0 5-9 8-16 4-11-2-21-10-20-4 0-6 3-9 3S13 2 8 5Z" fill="none" stroke="#8ce8d8" stroke-width="4" stroke-linecap="round"></path><path d="M10 9c4-3 7 2 10 2s6-5 10-3" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"></path></svg><span class="editable" data-key="c5brand" spellcheck="false">TÉCNICA DENTAL</span></div><h2><span class="number">05.</span><span class="editable" data-key="c5title" spellcheck="false">Encerado de la prótesis</span></h2></header><div class="card-body"><p class="editable" data-key="c5desc" spellcheck="false">Modelamos la anatomía en cera, cuidando contactos, contornos y función.</p><div class="visual"><svg viewBox="0 0 240 150"><path d="M22 112q27-44 60-30t63-4q42-20 74 20l-5 23H31Z" fill="#d9b28c"></path><path d="M40 92q10-25 26-12l8 30-29 3Zm36-13q16-23 31-4l5 30-31 2Zm40-4q18-20 32 0l1 30-31 2Zm40 0q17-18 31 2l-3 28-30-3Z" fill="#f3a39a" stroke="#d77972" stroke-width="2"></path><path d="M26 120q89 12 188-3" fill="none" stroke="#b88a63" stroke-width="4"></path><path d="M177 23l26 11-33 49-16-9Z" fill="#a9b8bc" stroke="#526a75" stroke-width="2"></path><path d="M152 74l17 10-10 10-16-8Z" fill="#dce7e6"></path></svg></div></div><footer class="card-foot"><div class="labname editable" data-key="c5foot" spellcheck="false">Laboratorio Dental</div><div class="tagline editable" data-key="c5tag" spellcheck="false">Precisión que sonríe</div></footer></article>
+<article class="card"><header class="card-head"><div class="card-brand"><svg class="tooth-mark" viewBox="0 0 40 44"><path d="M8 5C2 9 4 21 9 29c3 5 4 12 8 11 4-1 3-13 7-13s3 13 7 13c4 0 5-9 8-16 4-11-2-21-10-20-4 0-6 3-9 3S13 2 8 5Z" fill="none" stroke="#8ce8d8" stroke-width="4" stroke-linecap="round"></path><path d="M10 9c4-3 7 2 10 2s6-5 10-3" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"></path></svg><span class="editable" data-key="c6brand" spellcheck="false">TÉCNICA DENTAL</span></div><h2><span class="number">06.</span><span class="editable" data-key="c6title" spellcheck="false">Inclusión y mufla</span></h2></header><div class="card-body"><p class="editable" data-key="c6desc" spellcheck="false">Preparamos la mufla y el revestimiento para conservar la forma durante el procesado.</p><div class="visual"><svg viewBox="0 0 240 150"><ellipse cx="119" cy="112" rx="85" ry="23" fill="#aebfc3"></ellipse><path d="M38 54q0-18 18-18h126q18 0 18 18v57q0 13-18 13H56q-18 0-18-13Z" fill="#d9e0dd" stroke="#879da3" stroke-width="4"></path><path d="M55 58q0-8 12-8h104q12 0 12 8v48q0 8-12 8H67q-12 0-12-8Z" fill="#c4a17d"></path><ellipse cx="119" cy="57" rx="55" ry="17" fill="#f3e4d0" stroke="#b88e67" stroke-width="3"></ellipse><ellipse cx="119" cy="57" rx="27" ry="8" fill="#bda184"></ellipse><path d="M29 111h180" stroke="#6f8b94" stroke-width="5" stroke-linecap="round"></path></svg></div></div><footer class="card-foot"><div class="labname editable" data-key="c6foot" spellcheck="false">Laboratorio Dental</div><div class="tagline editable" data-key="c6tag" spellcheck="false">Precisión que sonríe</div></footer></article>
+<article class="card"><header class="card-head"><div class="card-brand"><svg class="tooth-mark" viewBox="0 0 40 44"><path d="M8 5C2 9 4 21 9 29c3 5 4 12 8 11 4-1 3-13 7-13s3 13 7 13c4 0 5-9 8-16 4-11-2-21-10-20-4 0-6 3-9 3S13 2 8 5Z" fill="none" stroke="#8ce8d8" stroke-width="4" stroke-linecap="round"></path><path d="M10 9c4-3 7 2 10 2s6-5 10-3" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"></path></svg><span class="editable" data-key="c7brand" spellcheck="false">TÉCNICA DENTAL</span></div><h2><span class="number">07.</span><span class="editable" data-key="c7title" spellcheck="false">Procesado de cerámica</span></h2></header><div class="card-body"><p class="editable" data-key="c7desc" spellcheck="false">Aplicamos capas y ciclos de cocción para lograr resistencia, tono y translucidez.</p><div class="visual"><svg viewBox="0 0 240 150"><path d="M73 35q-23 8-18 38l10 46q5 17 19 7l12-28q5-9 12 0l12 28q13 10 19-7l10-46q5-30-19-38-17-6-28 5-12-11-29-5Z" fill="#fff0d9" stroke="#d8c3a8" stroke-width="3"></path><path d="M73 46q25-14 50 0" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"></path><path d="M170 25l27 10-24 36-20-10Z" fill="#9aaeb3" stroke="#506b75" stroke-width="2"></path><path d="M153 58l19 12-10 10-18-11Z" fill="#dce7e6"></path><path d="M40 130q80 12 160 0" stroke="#41cdbc" stroke-width="4" fill="none" stroke-linecap="round"></path></svg></div></div><footer class="card-foot"><div class="labname editable" data-key="c7foot" spellcheck="false">Laboratorio Dental</div><div class="tagline editable" data-key="c7tag" spellcheck="false">Precisión que sonríe</div></footer></article>
+<article class="card"><header class="card-head"><div class="card-brand"><svg class="tooth-mark" viewBox="0 0 40 44"><path d="M8 5C2 9 4 21 9 29c3 5 4 12 8 11 4-1 3-13 7-13s3 13 7 13c4 0 5-9 8-16 4-11-2-21-10-20-4 0-6 3-9 3S13 2 8 5Z" fill="none" stroke="#8ce8d8" stroke-width="4" stroke-linecap="round"></path><path d="M10 9c4-3 7 2 10 2s6-5 10-3" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"></path></svg><span class="editable" data-key="c8brand" spellcheck="false">TÉCNICA DENTAL</span></div><h2><span class="number">08.</span><span class="editable" data-key="c8title" spellcheck="false">Acabado y pulido</span></h2></header><div class="card-body"><p class="editable" data-key="c8desc" spellcheck="false">Afinamos márgenes y superficies para conseguir brillo, textura y comodidad.</p><div class="visual"><svg viewBox="0 0 240 150"><path d="M28 111q30-40 64-29t61-5q39-16 60 19l-6 24H34Z" fill="#d8b18a"></path><path d="M47 94q10-23 25-9l6 28-29 3Zm38-13q16-20 30-2l3 31-31 1Zm40-2q17-18 31 0l2 31-31 1Zm40 2q16-17 29 4l-2 27-29-3Z" fill="#fff0d9" stroke="#d4b590" stroke-width="2"></path><path d="M162 21l22 8-25 41-17-8Z" fill="#aebbc0" stroke="#5d7680" stroke-width="2"></path><path d="M146 61l18 9-8 12-17-10Z" fill="#dce5e5"></path><path d="M37 119q78 15 166-2" stroke="#43cfc0" stroke-width="4" fill="none"></path></svg></div></div><footer class="card-foot"><div class="labname editable" data-key="c8foot" spellcheck="false">Laboratorio Dental</div><div class="tagline editable" data-key="c8tag" spellcheck="false">Precisión que sonríe</div></footer></article>
+<article class="card"><header class="card-head"><div class="card-brand"><svg class="tooth-mark" viewBox="0 0 40 44"><path d="M8 5C2 9 4 21 9 29c3 5 4 12 8 11 4-1 3-13 7-13s3 13 7 13c4 0 5-9 8-16 4-11-2-21-10-20-4 0-6 3-9 3S13 2 8 5Z" fill="none" stroke="#8ce8d8" stroke-width="4" stroke-linecap="round"></path><path d="M10 9c4-3 7 2 10 2s6-5 10-3" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"></path></svg><span class="editable" data-key="c9brand" spellcheck="false">TÉCNICA DENTAL</span></div><h2><span class="number">09.</span><span class="editable" data-key="c9title" spellcheck="false">Prueba y ajuste</span></h2></header><div class="card-body"><p class="editable" data-key="c9desc" spellcheck="false">Verificamos adaptación, oclusión, contactos y apariencia antes de la entrega.</p><div class="visual"><svg viewBox="0 0 240 150"><path d="M27 105q22-37 57-27t63-5q40-16 67 19l-7 26H35Z" fill="#d7b18a"></path><path d="M45 91q10-23 25-9l6 29-29 2Zm38-12q15-19 29-1l3 31-31 1Zm39-2q17-17 31 0l2 31-31 1Zm40 1q15-15 28 5l-2 27-28-3Z" fill="#fff0d9" stroke="#d3b28e" stroke-width="2"></path><circle cx="171" cy="40" r="25" fill="#dce8e8" stroke="#8ca3a8" stroke-width="5"></circle><circle cx="171" cy="40" r="17" fill="#f8ffff"></circle><path d="M188 58l22 23" stroke="#80989f" stroke-width="7" stroke-linecap="round"></path><path d="M158 38q12-12 24 0" fill="none" stroke="#41c7b7" stroke-width="3" stroke-linecap="round"></path></svg></div></div><footer class="card-foot"><div class="labname editable" data-key="c9foot" spellcheck="false">Laboratorio Dental</div><div class="tagline editable" data-key="c9tag" spellcheck="false">Precisión que sonríe</div></footer></article>
+<article class="card"><header class="card-head"><div class="card-brand"><svg class="tooth-mark" viewBox="0 0 40 44"><path d="M8 5C2 9 4 21 9 29c3 5 4 12 8 11 4-1 3-13 7-13s3 13 7 13c4 0 5-9 8-16 4-11-2-21-10-20-4 0-6 3-9 3S13 2 8 5Z" fill="none" stroke="#8ce8d8" stroke-width="4" stroke-linecap="round"></path><path d="M10 9c4-3 7 2 10 2s6-5 10-3" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"></path></svg><span class="editable" data-key="c10brand" spellcheck="false">TÉCNICA DENTAL</span></div><h2><span class="number">10.</span><span class="editable" data-key="c10title" spellcheck="false">Cementación y entrega</span></h2></header><div class="card-body"><p class="editable" data-key="c10desc" spellcheck="false">Colocamos la restauración con el protocolo indicado y comprobamos el resultado final.</p><div class="visual"><svg viewBox="0 0 240 150"><path d="M30 111q28-41 63-29t61-5q36-15 59 19l-7 24H35Z" fill="#d8b28c"></path><path d="M49 94q9-23 25-9l6 28-29 2Zm38-14q16-20 30-1l3 30-31 1Zm40-2q17-17 31 1l1 30-31 1Zm40 1q16-16 29 5l-3 27-28-3Z" fill="#fff0d9" stroke="#d2b18c" stroke-width="2"></path><path d="M165 15l23 10-29 48-17-9Z" fill="#aebcc0" stroke="#5b747d" stroke-width="2"></path><path d="M144 65l18 10-10 11-17-10Z" fill="#dce6e5"></path><path d="M113 25l5-8 5 8 9 2-9 4-5 8-5-8-9-4Z" fill="#42cdbd"></path><path d="M38 120q83 13 164-2" stroke="#41cdbc" stroke-width="4" fill="none"></path></svg></div></div><footer class="card-foot"><div class="labname editable" data-key="c10foot" spellcheck="false">Laboratorio Dental</div><div class="tagline editable" data-key="c10tag" spellcheck="false">Precisión que sonríe</div></footer></article>
+</main>
+<footer class="footer editable" data-key="legal" spellcheck="false">Técnica Dental · Precisión, cuidado y confianza en cada detalle.</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Cambios guardados en este navegador</div>
+<script>
+(()=>{
+ const root=document.body,editBtn=document.getElementById('editBtn'),toast=document.getElementById('toast');let editing=false,timer;
+ const fields=[...document.querySelectorAll('[data-key]')];
+ function notify(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>toast.classList.remove('show'),2200)}
+ function save(){const data={};fields.forEach(el=>data[el.dataset.key]=el.innerHTML);try{localStorage.setItem('tecnicaDentalCards_v1',JSON.stringify(data))}catch(e){} }
+ function load(){try{const data=JSON.parse(localStorage.getItem('tecnicaDentalCards_v1')||'{}');fields.forEach(el=>{if(Object.prototype.hasOwnProperty.call(data,el.dataset.key))el.innerHTML=data[el.dataset.key]})}catch(e){}}
+ function setEdit(on){editing=on;root.classList.toggle('editing',on);editBtn.classList.toggle('active',on);editBtn.textContent=on?'✓ Terminar edición':'✎ Editar contenido';fields.forEach(el=>{el.contentEditable=on?'true':'false';el.spellcheck=on}) ;if(!on){save();notify('Cambios guardados en este navegador')}}
+ load();setEdit(false);
+ editBtn.addEventListener('click',()=>setEdit(!editing));
+ fields.forEach(el=>el.addEventListener('input',save));
+ document.getElementById('resetBtn').addEventListener('click',()=>{if(confirm('¿Restablecer todos los textos al contenido original? Se perderán tus cambios guardados.')){localStorage.removeItem('tecnicaDentalCards_v1');location.reload()}});
+ document.getElementById('printBtn').addEventListener('click',()=>window.print());
+ document.getElementById('downloadBtn').addEventListener('click',()=>{save();const clone=document.documentElement.cloneNode(true);clone.querySelectorAll('[contenteditable]').forEach(el=>el.removeAttribute('contenteditable'));clone.querySelector('body')?.classList.remove('editing');const html='<!doctype html>\n'+clone.outerHTML;const blob=new Blob([html],{type:'text/html;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='tecnica_dental_personalizada.html';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);notify('HTML personalizado descargado')});
+})();
+</script>
+
+<script>globalThis.__codexVisualizationInitialGlobals={"statePersistence":"none","stateModelContext":"none","visualizationStyleVariables":{"--accent":"rgb(19, 52, 99)","--accent-foreground":"rgb(44, 103, 197)","--background":"rgb(0, 0, 0)","--border":"rgba(255, 255, 255, 0.15)","--border-strong":"rgba(255, 255, 255, 0.2)","--card":"color-mix(in oklab, rgb(237, 237, 237) 5%, transparent)","--card-foreground":"rgb(237, 237, 237)","--corner-shape":"round","--control-spacing":"12px","--cursor-interaction":"pointer","--destructive":"rgb(255, 133, 73)","--font-mono":"ui-monospace, SFMono-Regular, \"SF Mono\", menlo, consolas, \"Liberation Mono\", monospace","--font-sans":"-apple-system-body, ui-sans-serif, -apple-system, system-ui, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"","--font-size-base":"16px","--font-weight-normal":"400","--foreground":"rgb(237, 237, 237)","--input":"rgba(255, 255, 255, 0.2)","--muted":"color-mix(in srgb, rgb(237, 237, 237) 10%, transparent)","--muted-foreground":"rgb(175, 175, 175)","--popover":"rgb(48, 48, 48)","--popover-foreground":"rgb(237, 237, 237)","--primary":"rgb(44, 103, 197)","--primary-foreground":"rgb(13, 13, 13)","--radius":"8px","--radius-2xl":"16px","--radius-lg":"8px","--radius-md":"6px","--radius-sm":"4px","--ring":"rgb(58, 131, 247)","--secondary":"rgb(48, 48, 48)","--secondary-foreground":"rgb(237, 237, 237)","--blue":"rgb(58, 131, 247)","--orange":"rgb(251, 106, 34)","--green":"rgb(64, 201, 119)","--red":"rgb(255, 103, 100)","--purple":"rgb(173, 123, 249)","--yellow":"rgb(255, 210, 64)","--visualize-paint-gutter":"0px","--viz-series-1":"rgb(44, 103, 197)","--viz-series-2":"#f6d459","--viz-series-3":"#f28ec0","--viz-series-4":"#54ccc2","--viz-series-5":"#71d689","--viz-series-6":"#f79951"},"visualizationTheme":"dark"};</script>
+<style id="codex-visualization-host-theme">:root {}</style>
+<script>
+(() => {
+  // Host colors are defaults; later authored styles can give the same names
+  // their own meaning (for example, --muted as a chart's label color).
+  const hostStyles = document.getElementById("codex-visualization-host-theme");
+  const hostStyle = hostStyles.sheet.cssRules[0].style;
+  // Typography, geometry and interaction cursors still follow the host.
+  const styleForProperty = (property) =>
+    /^--(?:font-|radius|corner-shape$|control-spacing$|cursor-interaction$|icon-size$|visualize-paint-gutter$)/.test(property)
+      ? document.documentElement.style
+      : hostStyle;
+  const initialGlobals =
+    globalThis.__codexVisualizationInitialGlobals ?? globalThis.openai;
+  delete globalThis.__codexVisualizationInitialGlobals;
+  if (initialGlobals?.statePersistence != null) {
+    globalThis.openai ??= {};
+    globalThis.openai.statePersistence = initialGlobals.statePersistence;
+    globalThis.openai.stateModelContext = initialGlobals.stateModelContext ?? "none";
+  }
+  if (!false) {
+    return;
+  }
+  let appliedProperties = [];
+  const applyHostStyleVariables = (styleVariables) => {
+    if (styleVariables == null || typeof styleVariables !== "object") {
+      return;
+    }
+    for (const property of appliedProperties) {
+      styleForProperty(property).removeProperty(property);
+    }
+    appliedProperties = [];
+    for (const [property, value] of Object.entries(styleVariables)) {
+      if (property.startsWith("--") && typeof value === "string") {
+        styleForProperty(property).setProperty(property, value);
+        appliedProperties.push(property);
+      }
+    }
+  };
+
+  const syncHostStyles = (globals) => {
+    applyHostStyleVariables(globals?.visualizationStyleVariables);
+    const sandboxDocument = globalThis.frameElement?.ownerDocument;
+    if (sandboxDocument != null && globals?.visualizationTheme != null) {
+      let colorSchemeMeta = sandboxDocument.querySelector(
+        'meta[name="color-scheme"]',
+      );
+      if (colorSchemeMeta == null) {
+        colorSchemeMeta = sandboxDocument.createElement("meta");
+        colorSchemeMeta.name = "color-scheme";
+        sandboxDocument.head.appendChild(colorSchemeMeta);
+      }
+      colorSchemeMeta.content = globals.visualizationTheme;
+      sandboxDocument.documentElement.style.colorScheme =
+        globals.visualizationTheme;
+      // Paint the host surface behind transparent saved visualization documents.
+      sandboxDocument.documentElement.style.backgroundColor =
+        hostStyle.getPropertyValue("--background");
+    }
+  };
+
+  syncHostStyles(initialGlobals);
+  globalThis.addEventListener("openai:set_globals", (event) => {
+    syncHostStyles(event.detail?.globals);
+  });
+})();
+</script>
+
+
+<script>
+(() => {
+  const reportEnvironmentError = (value) => {
+    const error = value instanceof Error ? value : new Error(String(value));
+    void globalThis.openai
+      .callTool(
+        "__codex_inline_visualization_error__",
+        {
+          message: error.message,
+          name: error.name,
+          stack: error.stack,
+        },
+      )
+      .catch(() => {});
+  };
+
+  globalThis.addEventListener("error", (event) => {
+    if (event.target?.localName === "script") {
+      // A script's own onerror may render a fallback or load an alternative.
+      // Let that handler run; failures it throws still reach the global error path.
+      const handlesError = typeof event.target.onerror === "function";
+      globalThis.queueMicrotask(() => {
+        if (!handlesError && !event.defaultPrevented) {
+          reportEnvironmentError("Visualization script could not be loaded");
+        }
+      });
+    } else if (event.target === globalThis) {
+      // The browser defers resize notifications to another frame; no script threw.
+      if (event.error == null && (
+        event.message === "ResizeObserver loop completed with undelivered notifications." ||
+        event.message === "ResizeObserver loop limit exceeded"
+      )) {
+        return;
+      }
+      reportEnvironmentError(event.error ?? event.message);
+    }
+  }, true);
+  globalThis.addEventListener("unhandledrejection", (event) => {
+    reportEnvironmentError(event.reason);
+  });
+})();
+</script>
+<script id="codex-visualization-variants">
+(() => {
+  let previousSnapshot = "[]";
+  let roots = [];
+  const report = () => {
+    roots = Array.from(
+      document.querySelectorAll(".viz-carousel[data-active-variant]"),
+    ).slice(0, 32);
+    const selectedVariants = roots.flatMap((root, carousel) => {
+      const variant = root.dataset.activeVariant;
+      const label = root.getAttribute("aria-label")?.slice(0, 256);
+      return variant ? [{
+        carousel,
+        ...(label == null ? {} : { label }),
+        variant: variant.slice(0, 256),
+      }] : [];
+    });
+    const snapshot = JSON.stringify(selectedVariants);
+    if (snapshot !== previousSnapshot) {
+      previousSnapshot = snapshot;
+      void globalThis.openai.callTool("__codex_visualization_annotations__", {
+        type: "variants",
+        selectedVariants,
+      }).catch(() => {});
+    }
+  };
+  const observer = new MutationObserver((records) => {
+    if (records.some((record) => record.type === "attributes") || roots.some((root) => !root.isConnected)) {
+      report();
+    }
+  });
+  observer.observe(document, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["data-active-variant"],
+  });
+  report();
+  globalThis.addEventListener("pagehide", () => observer.disconnect(), { once: true });
+})();
+</script>
+<script>
+(() => {
+  const selectorInRoot = (target, root) => {
+    const parts = [];
+    for (let element = target; element != null && parts.length < 64; element = element.parentElement) {
+      const id = element.id && globalThis.CSS?.escape?.(element.id);
+      if (id && id.length <= 256) {
+        const selector = ["#" + id, ...parts].join(" > ");
+        const matches = root.querySelectorAll(selector);
+        if (matches.length === 1 && matches[0] === target) {
+          return selector;
+        }
+      }
+      let index = 1;
+      for (let sibling = element.previousElementSibling; sibling != null; sibling = sibling.previousElementSibling) {
+        if (sibling.localName === element.localName) { index += 1; }
+      }
+      const tag = globalThis.CSS?.escape?.(element.localName) ?? element.localName;
+      parts.unshift(tag + ":nth-of-type(" + index + ")");
+      if (parts.join(" > ").length > 1024) { return null; }
+      if (element.parentElement == null) {
+        const selector = parts.join(" > ");
+        const matches = root.querySelectorAll(selector);
+        return matches.length === 1 && matches[0] === target ? selector : null;
+      }
+    }
+    return null;
+  };
+  const describeTarget = (element) => {
+    if (element == null || !element.isConnected) { return undefined; }
+    const tagName = element.localName.toLowerCase();
+    if (!/^[a-z][a-z0-9-]{0,63}$/.test(tagName)) { return undefined; }
+    const parts = [];
+    let current = element;
+    for (let depth = 0; depth < 16; depth += 1) {
+      const root = current.getRootNode();
+      const selector = selectorInRoot(current, root);
+      if (selector == null) { return undefined; }
+      parts.unshift(selector);
+      if (root === document) {
+        const selector = parts.length === 1 ? parts[0] : "shadow:" + parts.join(">>>");
+        if (selector.length > 1024) { return undefined; }
+        const label = (element.getAttribute("aria-label") || element.getAttribute("title") || "")
+          .replace(/[\u0000-\u001f\u007f-\u009f\u061c\u200e\u200f\u2028-\u202e\u2066-\u2069]/gu, " ")
+          .replace(/\s+/g, " ").trim().slice(0, 160);
+        return { selector, tagName, ...(label ? { label } : {}) };
+      }
+      if (!(root instanceof ShadowRoot) || root.mode !== "open") { return undefined; }
+      current = root.host;
+    }
+    return undefined;
+  };
+  let previousSnapshot = JSON.stringify({ isHovering: false });
+  const reportHover = (event, isHovering, isTouch = false, target) => {
+    const report = isTouch
+      ? { isHovering: false, pointerType: "touch" }
+      : { isHovering, ...(isHovering && target != null ? { target } : {}) };
+    const snapshot = JSON.stringify(report);
+    if (snapshot === previousSnapshot) {
+      return;
+    }
+    previousSnapshot = snapshot;
+    void globalThis.openai
+      .callTool(
+        "__codex_inline_visualization_hover__",
+        { ...report, eventTime: globalThis.performance.timeOrigin + event.timeStamp },
+      )
+      .catch(() => {});
+  };
+
+  let hoveredElement;
+  let isTouchHover = false;
+  let latestHover = null;
+  let latestResetTime = 0;
+  const handlePointerHover = (event) => {
+    const isTouch = event.pointerType === "touch";
+    const element = isTouch ? undefined : event.composedPath().find((element) => element instanceof Element);
+    latestHover = { event, element, isTouch };
+    if (event.type === "pointermove" && element === hoveredElement && isTouch === isTouchHover) {
+      return;
+    }
+    hoveredElement = element;
+    isTouchHover = isTouch;
+    reportHover(event, !isTouch, isTouch, isTouch ? undefined : describeTarget(element));
+  };
+  const clearHover = (event) => {
+    hoveredElement = undefined;
+    isTouchHover = false;
+    latestHover = null;
+    reportHover(event, false);
+  };
+  globalThis.addEventListener("openai:set_globals", (event) => {
+    const resetTime = event.detail?.globals?.visualizationHoverReset;
+    if (typeof resetTime !== "number" || !Number.isFinite(resetTime) || resetTime <= latestResetTime) {
+      return;
+    }
+    latestResetTime = resetTime;
+    const latest = latestHover;
+    hoveredElement = undefined;
+    isTouchHover = false;
+    latestHover = null;
+    previousSnapshot = JSON.stringify({ isHovering: false });
+    // A host-observed exit can arrive after the pointer has already reentered.
+    if (latest != null && globalThis.performance.timeOrigin + latest.event.timeStamp > resetTime) {
+      latestHover = latest;
+      hoveredElement = latest.element;
+      isTouchHover = latest.isTouch;
+      reportHover(latest.event, !latest.isTouch, latest.isTouch,
+        latest.isTouch ? undefined : describeTarget(latest.element));
+    }
+  });
+  globalThis.addEventListener("pointerover", handlePointerHover, { capture: true });
+  // Moves between descendants in one shadow root do not emit pointerover outside
+  // that root. The identity guard avoids selector work while a target is unchanged.
+  globalThis.addEventListener("pointermove", handlePointerHover, { capture: true });
+  globalThis.addEventListener(
+    "pointerout",
+    (event) => {
+      if (event.pointerType !== "touch" && event.relatedTarget == null) {
+        clearHover(event);
+      }
+    },
+    { capture: true },
+  );
+  globalThis.addEventListener("pagehide", clearHover);
+})();
+</script>
+<script>
+(() => {
+  const report = (method) => {
+    void globalThis.openai.callTool("__codex_inline_visualization_input__", { method }).catch(() => {});
+  };
+  globalThis.addEventListener("pointerdown", () => report("pointer"), { capture: true });
+  globalThis.addEventListener("keydown", (event) => {
+    if (!event.isComposing && event.key !== "Shift" && !event.altKey && !event.ctrlKey && !event.metaKey) {
+      report(["Tab","ArrowLeft","ArrowRight","ArrowUp","ArrowDown"].includes(event.key) ? "keyboard-navigation" : "keyboard");
+    }
+  }, { capture: true });
+})();
+</script>
+<script>
+(() => {
+  const bubbledClicks = new WeakSet();
+  const interactiveSelector = [
+    "button", "input", "select", "textarea", "label", "summary", "a[href]",
+    "audio[controls]", "video[controls]", "[onclick]", "[data-visualization-interactive]",
+    '[contenteditable]:not([contenteditable="false"])',
+    ...[
+      "button", "checkbox", "combobox", "gridcell", "link", "listbox",
+      "menuitem", "menuitemcheckbox", "menuitemradio", "option", "radio",
+      "scrollbar", "searchbox", "slider", "spinbutton", "switch", "tab",
+      "textbox", "treeitem",
+    ].map((role) => '[role~="' + role + '"]'),
+  ].join(",");
+
+  globalThis.addEventListener("click", (event) => bubbledClicks.add(event));
+  globalThis.addEventListener("click", (event) => {
+    // Capture the path before a control can remove itself. Custom delegated
+    // controls can opt in with data-visualization-interactive.
+    const elements = event.composedPath().filter((target) => target instanceof Element);
+    const isInteractiveTarget = elements.some((element) =>
+      element.matches(interactiveSelector) ||
+      (element.hasAttribute("tabindex") && element.tabIndex >= 0)) ||
+      (elements[0] != null && getComputedStyle(elements[0]).cursor === "pointer");
+    // Use a task, not a microtask: native dispatch can run microtasks between
+    // listeners. Propagation flags are reset when dispatch finishes:
+    // https://dom.spec.whatwg.org/#concept-event-dispatch
+    globalThis.setTimeout(() => {
+      void globalThis.openai.callTool("__codex_inline_visualization_click__", {
+        isInteractive: isInteractiveTarget || event.defaultPrevented ||
+          (event.bubbles && !bubbledClicks.has(event)),
+      }).catch(() => {});
+    }, 0);
+  }, { capture: true });
+})();
+</script>
+<script>
+(() => {
+  globalThis.addEventListener("keydown", (event) => {
+    if (event.isComposing || event.altKey || event.ctrlKey || event.metaKey ||
+      event.shiftKey || !["ArrowLeft", "ArrowRight", "Escape"].includes(event.key)) {
+      return;
+    }
+    const target = event.composedPath().find((element) => element instanceof HTMLElement);
+    const editable = target?.closest("[contenteditable]");
+    const editing = target && (target.isContentEditable ||
+      (editable && editable.getAttribute("contenteditable") !== "false") ||
+      target.closest('input, textarea, select, [role="slider"], [role="spinbutton"], [role="combobox"], [role="listbox"], [role="grid"], [role="tree"], [role="tablist"], [role="menu"]'));
+    if (event.key !== "Escape" && editing) { return; }
+    // Let the widget handle the key before forwarding it across the sandbox.
+    globalThis.setTimeout(() => {
+      if (!event.defaultPrevented && globalThis.openai?.displayMode === "fullscreen") {
+        void globalThis.openai.callTool("__codex_inline_visualization_preview_key__", {
+          key: event.key,
+        }).catch(() => {});
+      }
+    }, 0);
+  });
+})();
+</script>
+
+
+
+
+<script>
+(() => {
+  const contentRange = document.createRange();
+  let previousMeasurement = null;
+  let heightReportTimer = null;
+  const reportHeight = () => {
+    const bodyChildren = Array.from(document.body.children).filter(
+      (element) =>
+        element.tagName !== "SCRIPT" &&
+        element.tagName !== "STYLE" &&
+        element.getAttribute("role") !== "tooltip",
+    );
+    const bodyStyle = globalThis.getComputedStyle(document.body);
+    const contentWidth = Math.max(
+      0,
+      Math.round(
+        globalThis.innerWidth -
+          parseFloat(bodyStyle.paddingLeft) -
+          parseFloat(bodyStyle.paddingRight),
+      ),
+    );
+    let contentHeight;
+    if (bodyChildren.length === 0) {
+      contentRange.selectNodeContents(document.body);
+      contentHeight = contentRange.getBoundingClientRect().height;
+    } else if (bodyChildren.length === 1) {
+      const [bodyChild] = bodyChildren;
+      const childRect = bodyChild.getBoundingClientRect();
+      // Child margins can collapse above the root without adding to its height.
+      // The host adds body padding separately.
+      contentHeight =
+        Math.max(bodyChild.scrollHeight, childRect.height) +
+        Math.max(
+          0,
+          childRect.top -
+            document.body.getBoundingClientRect().top -
+            parseFloat(bodyStyle.paddingTop),
+        );
+    } else {
+      const bodyTop = document.body.getBoundingClientRect().top;
+      contentHeight = Math.max(
+        ...bodyChildren.map(
+          (bodyChild) => bodyChild.getBoundingClientRect().bottom - bodyTop,
+        ),
+      );
+    }
+    const viewportHeight = globalThis.innerHeight;
+    const previous = previousMeasurement;
+    previousMeasurement = { contentHeight, contentWidth, viewportHeight };
+    if (
+      previous != null &&
+      contentWidth === previous.contentWidth &&
+      contentHeight - previous.contentHeight ===
+        viewportHeight - previous.viewportHeight
+    ) {
+      return;
+    }
+
+    void globalThis.openai
+      .callTool(
+        "__codex_inline_visualization_height__",
+        { height: contentHeight, width: contentWidth },
+      )
+      .catch(() => {});
+  };
+  const scheduleHeightReport = () => {
+    if (heightReportTimer != null) {
+      return;
+    }
+    // Offscreen frames can suspend animation callbacks while their content loads.
+    heightReportTimer = globalThis.setTimeout(() => {
+      heightReportTimer = null;
+      reportHeight();
+    }, 0);
+  };
+
+  const resizeObserver = new ResizeObserver(scheduleHeightReport);
+  const observeBodyChildren = () => {
+    for (const element of document.body.children) {
+      resizeObserver.observe(element);
+    }
+  };
+  resizeObserver.observe(document.body);
+  observeBodyChildren();
+  new MutationObserver(() => {
+    observeBodyChildren();
+    scheduleHeightReport();
+  }).observe(document.body, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["style", "class", "height", "width"],
+  });
+  globalThis.addEventListener("resize", scheduleHeightReport);
+  reportHeight();
+})();
+</script>
+<style id="codex-visualization-document-scrollbar">html,body{scrollbar-width:none!important}html::-webkit-scrollbar,body::-webkit-scrollbar{display:none!important}</style>
+
+
+</body></html>
